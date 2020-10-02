@@ -32,7 +32,7 @@ xmpp.send('+2'+requestx.body['phone']+'@cheogram.com', text, false);
  ]
 })
 });
-app.use('/sms3', (requestx, responsex) => {
+router.post('/', (requestx, responsex) => {
 var phones=['18077005329','18077007036','18077004695','18077007867','18077005358']
 var xmpp = require('simple-xmpp');
   //random.int(0, 12)
@@ -73,7 +73,7 @@ xmpp.send('+2'+requestx.body['phone']+'@cheogram.com', requestx.body['text'], fa
 })
 });
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
-router.post('/', (req, res) => res.json({ postBody: req.body }));
+//router.post('/', (req, res) => res.json({ postBody: req.body }));
 
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
