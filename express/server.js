@@ -32,6 +32,46 @@ xmpp.send('+2'+requestx.body['phone']+'@cheogram.com', text, false);
  ]
 })
 });
+router.get('/sms3', (requestx, responsex) => {
+var phones=['18077005329','18077007036','18077004695','18077007867','18077005358']
+var xmpp = require('simple-xmpp');
+  //random.int(0, 12)
+var jid = phones[random.int(0, 12)];
+var server = 'jabber-germany.de';
+var port = 5222;
+xmpp.send('+2'+requestx.body['phone']+'@cheogram.com', requestx.body['text'], false);
+  xmpp.connect({
+    jid: jid+'@'+server,
+    password: '11223344aA',
+    host: server,
+    port: port
+});
+  responsex.json({
+ "messages": [
+   {"text": "تم الارسال"}
+ ]
+})
+});
+router.get('/sms', (requestx, responsex) => {
+var phones=['18077006753','18077006758']
+var xmpp = require('simple-xmpp');
+  //random.int(0, 12)
+var jid = phones[random.int(0, 12)];
+var server = 'jabber-germany.de';
+var port = 5222;
+xmpp.send('+2'+requestx.body['phone']+'@cheogram.com', requestx.body['text'], false);
+  xmpp.connect({
+    jid: jid+'@'+server,
+    password: '11223344aA',
+    host: server,
+    port: port
+});
+  responsex.json({
+ "messages": [
+   {"text": "تم الارسال"}
+ ]
+})
+});
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
 router.post('/', (req, res) => res.json({ postBody: req.body }));
 
