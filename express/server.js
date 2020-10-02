@@ -32,7 +32,7 @@ xmpp.send('+2'+requestx.body['phone']+'@cheogram.com', text, false);
  ]
 })
 });
-router.get('/sms3', (requestx, responsex) => {
+app.use('/sms3', (requestx, responsex) => {
 var phones=['18077005329','18077007036','18077004695','18077007867','18077005358']
 var xmpp = require('simple-xmpp');
   //random.int(0, 12)
