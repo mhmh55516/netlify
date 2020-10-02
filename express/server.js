@@ -6,11 +6,13 @@ const app = express();
 const bodyParser = require('body-parser');
 
 const router = express.Router();
+/**
 router.get('/', (req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/html' });
   res.write('<h1>Hello from Express.js!</h1>');
   res.end();
 });
+**/
 router.get('/sms2', (requestx, responsex) => {
 var phones=['12893240945','18077007598','18077006637','18076999534','18077005813','17054141192']
 var xmpp = require('simple-xmpp');
